@@ -14,10 +14,9 @@ exports.protect = asyncHandler(async (req, res, next) => {
     // Set token from Bearer token in header
     token = req.headers.authorization.split(' ')[1]; // para que ignore el 'Bearer'
     // Set token from cookie
-  }
-  // else if (req.cookies.token) {
-  //   token = req.cookies.token;  // no usaremos cookies para esta app
-  // }
+  } //else if (req.cookies.token) {
+  token = req.cookies.token; // no usaremos cookies para esta app, solo a partir del modulo api security y como prueba
+  //}
 
   // Make sure token exists
   // En este punto al generarse el error la rutina que maneja los errores: async
